@@ -7,6 +7,8 @@ var nombre="";
 var topeDeck="";
 var cartasJ=[];
 var cartasM=[];
+var nJ=0;
+var nM=0;
 function overxd(e) {
   e.style="background:#F8B320;";
 }
@@ -88,16 +90,27 @@ function agregarCartaA(deck,quien){
     var nmage=document.createElement("img");
     srci=recogerCarta(deck,"J");
     nmage.setAttribute("src","img/"+cartasJ[srci]);
-    nmage.setAttribute("id",cartasJ[srci]);
-    nmage.setAttribute("height","50%");
+    nmage.setAttribute("height","150px");
+    nmage.setAttribute("width","100px");
+    if(nJ != 0)//si no es la primera carta  de j tiene class
+    {
+      nmage.setAttribute("class","nivel");
+    }
+    nJ++;
     divj.appendChild(nmage);
   }else{
     var divM=document.getElementById("cartasM");
     var nmage=document.createElement("img");
     srci=recogerCarta(deck,"M");
     nmage.setAttribute("src","img/"+cartasM[srci]);
-    nmage.setAttribute("height","50%");
-    nmage.setAttribute("id",cartasM[srci]);
+    nmage.setAttribute("height","150px");
+    nmage.setAttribute("width","100px");
+    if(nM != 0)//si no es la primera carta  de j tiene class
+    {
+      nmage.setAttribute("class","nivel");
+    }
+    nM++;
+
     divM.appendChild(nmage);
   }
 }
